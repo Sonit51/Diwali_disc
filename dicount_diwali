@@ -1,0 +1,31 @@
+Bill amount to be paid
+As a Diwali offer, a textile shop gives a discount based on the total bill amount as follows:
+
+Total Bill Amount 	Discount
+>₹ 5000	            25%
+₹3000 to ₹4999	    15%
+₹1000 to ₹2999	    10%
+< ₹1000	            5%
+Given the total amount of purchase by a customer, write a code to find the amount payable by the customer. 
+Amount payable should only be integers so round up if decimal part of amount payable is >= 0.50 and round down otherwise.
+For example, if the total bill amount is ₹ 6437 then amount payable is ₹4828 and if total bill amount is ₹3591 then amount payable is ₹3052.
+
+Code>>
+
+import math
+n=int(input())
+if n>=5000:
+    pay=n-n*0.25
+elif n>=3000 and n<=4999:
+    pay=n-n*0.15
+elif n>=1000 and n<=2999:
+    pay=n-n*0.10
+elif n<1000:
+    pay=n-n*0.05
+ap=pay-int(pay)
+if ap<0.50:
+    m=math.floor(pay)
+    print(m)
+else:
+    m=math.ceil(pay)
+    print(m)
